@@ -1,12 +1,12 @@
 /* Greeter Screen */
 #greeterScreen.screen {
 	z-index: 5;
-	top: 0;
+	top: -100vh;
 	left: 0;
 }
 
-#greeterScreen.screen.hideGreeterScreen {
-	top: -100vh;
+#greeterScreen.screen.showGreeterScreen {
+	top: 0vh;
 }
 
 #greeterScreenContent {
