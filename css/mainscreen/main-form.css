@@ -22,8 +22,9 @@
 
 /* Center profile container */
 #profilePictureContainer {
-  height: 148px;
-  width: 148px;
+  /* height: 148px; */
+  /* width: 148px; */
+  width: 10%;
   background: var(--base-bg);
   border-radius: 50%;
   pointer-events: initial;
@@ -37,8 +38,9 @@
 
 /* Profile picture */
 #profilePicture {
-  height: 138px;
-  width: 138px;
+  /* height: 138px; */
+  /* width: 138px; */
+  width: 100%;
   border-radius: 50%;
   object-fit: cover;
   flex-flow: column wrap;
