@@ -72,6 +72,7 @@ class Authentication {
 	_authenticationFailed() {
 		// New authentication session
 		this.startAuthentication();
+        profilePictureRotate.rotateProfilePicture();
 
 		// Clear passwordInput field
 		this._passwordInputEl.value = '';
@@ -100,7 +101,7 @@ class Authentication {
 	// You passed to authentication
 	_authenticationSuccess() {
 		// Rotate profile picture
-		profilePictureRotate.rotateProfilePicture();
+		profilePictureRipple.rippleProfilePicture();
 
 		// Success messages
 		this._passwordInputBox.classList.add('authenticationSuccess');
@@ -117,7 +118,7 @@ class Authentication {
 				// Login
 				lightdm.start_session_sync(sessionsScreen.getDefaultSession());
 			},
-			1500
+			1000
 		);
 	}
 
@@ -152,7 +153,7 @@ class Authentication {
 				// Prevent login spamming
 				if (profilePictureRotate.getProfileAnimationStatus()) return;
 				// Rotate profile picture
-				profilePictureRotate.rotateProfilePicture();
+				// profilePictureRotate.rotateProfilePicture();
 				
 				// Validation
 				lightdm.respond(String(this._password));
@@ -194,7 +195,7 @@ class Authentication {
 					// Prevent login spamming
 					if (profilePictureRotate.getProfileAnimationStatus()) return;
 					// Rotate profile picture
-					profilePictureRotate.rotateProfilePicture();
+					// profilePictureRotate.rotateProfilePicture();
 					
 					// Validate
 					lightdm.respond(String(this._password));

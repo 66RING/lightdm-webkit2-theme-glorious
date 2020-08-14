@@ -6,6 +6,9 @@ const debugMode = new DebugMode();
 // Instantiate profile picture animations
 const profilePictureRotate = new ProfilePictureRotate();
 
+// Instantiate profile picture ripple animations
+const profilePictureRipple = new ProfilePictureRipple();
+
 // Instantiate greeter screen
 const greeterScreen = new GreeterScreen();
 

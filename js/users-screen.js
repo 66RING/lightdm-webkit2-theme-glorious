@@ -9,6 +9,7 @@ class UsersScreen {
       "#profilePictureContainer"
     );
     this._profilePicture = document.querySelector("#profilePicture");
+    this._cp_profilePicture = document.querySelector("#cp-profilePicture");
     this._passwordInputEl = document.querySelector("#passwordInput");
 
     this._userScreenVisible = false;
@@ -119,6 +120,14 @@ class UsersScreen {
     };
   }
 
+  _setUserCpProfileImage(path, fallback) {
+    // Update this session button image
+    this._cp_profilePicture.src = path;
+    this._cp_profilePicture.onerror = () => {
+      this._cp_profilePicture.src = fallback;
+    };
+  }
+
   // Update user name label
   _setUserNameLabel(name) {
     this._userNameLabel.innerText = name;
@@ -171,6 +180,11 @@ class UsersScreen {
         userProfile.profileImage,
         userProfile.profileImageFallBack
       );
+
+      this._setUserCpProfileImage(
+        userProfile.profileImage,
+        userProfile.profileImageFallBack
+      );
       this._setUserNameLabel(userProfile.displayName);
 
       // Hide user screen
@@ -211,6 +225,10 @@ class UsersScreen {
 
     // Update profile pic and label
     this._setUserProfileImage(
+      this._defaultUserProfileImage,
+      this._defaultUserProfileImageFallback
+    );
+    this._setUserCpProfileImage(
       this._defaultUserProfileImage,
       this._defaultUserProfileImageFallback
     );

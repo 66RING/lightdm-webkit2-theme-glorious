@@ -49,6 +49,23 @@
   align-items: center;
 }
 
+#cp-profilePicture {
+  width: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-flow: column wrap;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+}
+
+.rippleProfileAnim{
+  animation: ripple var(--transition-speed) 1;
+  animation-iteration-count: 1;
+  animation-play-state: paused;
+}
+
 /* Initialize animation */
 .rotateProfileAnim {
   animation: rotate var(--transition-speed) 1;
@@ -64,6 +81,17 @@
 
   to {
     transform: rotate(360deg);
+  }
+}
+
+@keyframes ripple {
+  from {
+    width: 100%;
+    opcity: 1;
+  }
+  to {
+    width: 150%;
+    opacity: 0;
   }
 }
 
